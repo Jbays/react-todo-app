@@ -22,11 +22,21 @@ export default class App extends React.Component {
     }
   }
 
+  createTask(task){
+    this.state.todos.push({
+      task,
+      isCompleted:false
+    });
+    this.setState({todos:this.state.todos});
+  }
+
   render(){
     return (
       <div>
         <h1>React ToDo App</h1>
-        <CreateToDo/>
+        <CreateToDo
+          createTask={this.createTask.bind(this)}
+        />
         <TodoList
           todos={this.state.todos}
         />
