@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ToDoListItem extends React.Component {
+export default class ToDosListItem extends React.Component {
   render(){
     return (
       <tr>

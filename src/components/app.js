@@ -16,6 +16,7 @@ const todos = [
 export default class App extends React.Component {
   constructor(props){
     super(props);
+
     this.state = {
       todos
     }
@@ -27,7 +28,7 @@ export default class App extends React.Component {
         <h1>React ToDo App</h1>
         <CreateToDo/>
         <TodoList
-          todo={this.state.todos}
+          todos={this.state.todos}
         />
       </div>
     );
