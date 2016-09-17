@@ -5,8 +5,8 @@ export default class ToDosList extends React.Component {
   handleCreate(event){
     event.preventDefault();
 
-    // console.log(this.props.createTask);
     this.props.createTask(this.refs.createInput.value);
+    this.refs.createInput.value='';
   }
 
   render(){
