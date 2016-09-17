@@ -66,7 +66,7 @@ export default class ToDosListItem extends React.Component {
     return (
       <td>
         <button onClick={this.onEditClick.bind(this)}>Edit</button>
-        <button>Delete</button>
+        <button onClick={this.props.deleteTask.bind(this,this.props.task)}>Delete</button>
       </td>
     )
   }
