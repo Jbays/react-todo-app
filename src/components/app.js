@@ -4,17 +4,14 @@ import TodoList from './todo-list';
 
 const todos = [
   {
-    task:'finish mvp for todo-app using react',
-    isCompleted: false
-  },
-  {
-    task:'eat breakfast',
+    task:'This is your first task.  Green means completed.',
     isCompleted: true
   },
   {
-    task:'get black belt',
+    task:'Your second task.  Red means uncompleted.',
     isCompleted: false
-  }
+  },
+
 ];
 
 export default class App extends React.Component {

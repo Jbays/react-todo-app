@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class ToDosList extends React.Component {
   constructor(props){
-    super (props)
+    super (props);
 
     this.state={
       error:null
@@ -47,7 +47,6 @@ export default class ToDosList extends React.Component {
   }
 
   render(){
-
     return (
       <form onSubmit={this.handleCreate.bind(this)}>
         <input type="text" placeholder="What do I need to do?" ref="createInput" />

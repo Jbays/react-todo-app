@@ -7,7 +7,6 @@ export default class ToDosListItem extends React.Component {
     this.state={
       isEditing:false
     }
-
   }
 
   onEditClick(){
@@ -27,7 +26,7 @@ export default class ToDosListItem extends React.Component {
     this.setState({isEditing:false});
   }
 
-  renderTaskSection(){
+  renderTaskNameSection(){
     const { task, isCompleted } = this.props;
 
     const taskStyle = {
@@ -54,7 +53,7 @@ export default class ToDosListItem extends React.Component {
     );
   }
 
-  renderActionSection(){
+  renderButtonSection(){
     if (this.state.isEditing){
       return (
         <td>
@@ -74,8 +73,8 @@ export default class ToDosListItem extends React.Component {
   render(){
     return (
       <tr>
-        {this.renderTaskSection()}
-        {this.renderActionSection()}
+        {this.renderTaskNameSection()}
+        {this.renderButtonSection()}
       </tr>
     )
   }
