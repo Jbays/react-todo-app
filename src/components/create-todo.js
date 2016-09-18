@@ -1,4 +1,5 @@
 import React from 'react';
+const Button = require('react-button');
 
 export default class ToDosList extends React.Component {
   constructor(props){
@@ -49,9 +50,13 @@ export default class ToDosList extends React.Component {
 
   render(){
     return (
-      <form onSubmit={this.handleCreate.bind(this)}>
-        <input type="text" placeholder="Input Task Title Here" ref="createInput" />
-        <button>Create</button>
+      <form onSubmit={this.handleCreate.bind(this)}
+            style={{textAlign:'center',marginBottom:10}}>
+        <input type="text"
+               placeholder="Input Task Title Here"
+               ref="createInput"
+               style={{height: 27, borderColor: 'gray', borderWidth: 1,fontSize:20}}/>
+        <Button theme="primary" style={{marginTop:-1}}>Create</Button>
         {this.renderError()}
       </form>
     );

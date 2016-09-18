@@ -74,7 +74,7 @@ export default class App extends React.Component {
   render(){
     return (
       <div>
-        <h1>React-ToDo-App</h1>
+        <h1 style={{fontSize:40,textAlign:'center'}}>React-ToDo-App</h1>
         <CreateToDo
           createTask={this.createTask.bind(this)}
           todos={this.state.todos}

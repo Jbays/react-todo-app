@@ -5,8 +5,8 @@ export default class ToDosListHeader extends React.Component {
     return (
       <thead>
         <tr>
-          <th>Task</th>
-          <th>Actions</th>
+          <th style={{fontSize:20}}>Task Title</th>
+          <th style={{fontSize:20}}>Actions</th>
         </tr>
       </thead>
     );

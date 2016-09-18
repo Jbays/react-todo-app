@@ -1,4 +1,16 @@
 import React from 'react';
+const Button = require('react-button');
+
+let themes = {
+  delete: {
+    style:{color:'red'},
+    disabledStyle: { background: 'red'},
+    overStyle: { color: 'white',background: 'red'},
+    activeStyle: { background: 'red'},
+    pressedStyle: {background: 'red', fontWeight: 'bold'},
+    overPressedStyle: {background: 'red', fontWeight: 'bold'}
+  }
+};
 
 export default class ToDosListItem extends React.Component {
   constructor(props){
@@ -64,8 +76,8 @@ export default class ToDosListItem extends React.Component {
     }
     return (
       <td>
-        <button onClick={this.onEditClick.bind(this)}>Edit</button>
-        <button onClick={this.props.deleteTask.bind(this,this.props.task)}>Delete</button>
+        <Button theme="default" onClick={this.onEditClick.bind(this)}>Edit</Button>
+        <Button theme={themes.delete} onClick={this.props.deleteTask.bind(this,this.props.task)}>Delete</Button>
       </td>
     )
   }
