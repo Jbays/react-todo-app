@@ -2,17 +2,17 @@ import React from 'react';
 
 export default class ToDosList extends React.Component {
   constructor(props){
-    super (props);
+    super(props);
 
     this.state={
       error:null
     };
   }
 
-
   handleCreate(event){
     event.preventDefault();
 
+    //assigns createInput to input text box
     const createInput = this.refs.createInput;
     const task = createInput.value;
     const validateInput = this.validateInput(task);
@@ -30,7 +30,7 @@ export default class ToDosList extends React.Component {
   validateInput(task){
     if (!task){
       return 'Please enter a task'
-    } else if (_.find(this.props.todos,todo => todo.task === task)){
+    } else if ( _.find(this.props.todos, todo => todo.task === task) ){
       return 'Task already exists'
     } else {
       return null;
@@ -38,6 +38,7 @@ export default class ToDosList extends React.Component {
   }
 
   renderError(){
+    //if no error, return nothing
     if (!this.state.error){return null;}
     return (
       <div style={{color:'red'}}>
@@ -49,7 +50,7 @@ export default class ToDosList extends React.Component {
   render(){
     return (
       <form onSubmit={this.handleCreate.bind(this)}>
-        <input type="text" placeholder="What do I need to do?" ref="createInput" />
+        <input type="text" placeholder="Input Task Title Here" ref="createInput" />
         <button>Create</button>
         {this.renderError()}
       </form>

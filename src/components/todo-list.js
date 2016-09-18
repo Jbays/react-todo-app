@@ -1,7 +1,7 @@
-import _ from 'lodash';
+import _     from 'lodash';
 import React from 'react';
 import ToDosListHeader from './todo-list-header';
-import ToDosListItem from './todos-list-item';
+import ToDosListItem   from './todos-list-item';
 
 export default class ToDoList extends React.Component {
 
