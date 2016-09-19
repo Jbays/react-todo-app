@@ -32,8 +32,8 @@ export default class ToDosListItem extends React.Component {
     const { task, isCompleted } = this.props;
     const completedStatusStyle={
       textAlign:'center',
-      fontSize:20,
-      cursor:'pointer'
+      fontSize:25,
+      cursor:'pointer',
     };
 
     if ( isCompleted ){
@@ -51,12 +51,7 @@ export default class ToDosListItem extends React.Component {
   }
 
   renderTaskNameSection(){
-    const { task, isCompleted } = this.props;
-
-    const taskStyle = {
-      color: isCompleted ? 'green' : 'red',
-      cursor: 'pointer'
-    };
+    const { task } = this.props;
 
     //if todos-list-item is being edited
     if (this.state.isEditing){
@@ -72,8 +67,7 @@ export default class ToDosListItem extends React.Component {
 
     //if todos-list-item is NOT being edited
     return (
-      <td style={taskStyle}
-          onClick={this.props.toggleTask.bind(this,task)}>
+      <td>
         {task}
       </td>
     );
