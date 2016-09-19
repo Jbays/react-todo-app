@@ -29,21 +29,22 @@ export default class ToDosListItem extends React.Component {
   }
 
   renderCompletedStatusSection(){
-    const { isCompleted } = this.props;
+    const { task, isCompleted } = this.props;
     const completedStatusStyle={
       textAlign:'center',
-      fontSize:20
+      fontSize:20,
+      cursor:'pointer'
     };
 
     if ( isCompleted ){
       completedStatusStyle.color = 'green';
       return (
-        <td style={completedStatusStyle}>✓</td>
+        <td style={completedStatusStyle} onClick={this.props.toggleTask.bind(this,task)}>✓</td>
       )
     } else {
       completedStatusStyle.color = 'red';
       return (
-        <td style={completedStatusStyle}>✗</td>
+        <td style={completedStatusStyle} onClick={this.props.toggleTask.bind(this,task)}>✗</td>
       )
     }
 
@@ -57,6 +58,7 @@ export default class ToDosListItem extends React.Component {
       cursor: 'pointer'
     };
 
+    //if todos-list-item is being edited
     if (this.state.isEditing){
       return (
         <td>
@@ -68,6 +70,7 @@ export default class ToDosListItem extends React.Component {
       )
     }
 
+    //if todos-list-item is NOT being edited
     return (
       <td style={taskStyle}
           onClick={this.props.toggleTask.bind(this,task)}>
@@ -77,6 +80,7 @@ export default class ToDosListItem extends React.Component {
   }
 
   renderButtonSection(){
+    //if todos-list-item is being edited
     if (this.state.isEditing){
       return (
         <td>
@@ -89,6 +93,7 @@ export default class ToDosListItem extends React.Component {
         </td>
       )
     }
+    //if todos-list-item is NOT being edited
     return (
       <td>
         <Button onClick={this.onEditClick.bind(this)} theme='' style={{borderRadius:30}}>

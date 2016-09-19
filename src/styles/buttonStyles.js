@@ -4,6 +4,7 @@ let donuts = {
   },
   edit:{
     style:{
+      color:'blue',
       borderRadius:30
     },
   },
