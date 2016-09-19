@@ -1,5 +1,7 @@
 node_modules
 .idea
 DS_Store
-src/*-compiled.js
-src/*-compiled.js.map
+*-compiled.js
+*-compiled.js.map
+src/components/*-compiled.js
+src/components/*-compiled.js.map
