@@ -16,7 +16,7 @@ export default class ToDoList extends React.Component {
 
   render() {
     return (
-      <table >
+      <table style={{margin:'auto'}}>
         <ToDosListHeader />
           <tbody>
             {this.renderListItem()}

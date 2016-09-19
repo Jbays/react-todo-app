@@ -53,10 +53,10 @@ export default class ToDosList extends React.Component {
       <form onSubmit={this.handleCreate.bind(this)}
             style={{textAlign:'center',marginBottom:10}}>
         <input type="text"
-               placeholder="Input Task Title Here"
+               placeholder="  Input Task Title Here"
                ref="createInput"
-               style={{height: 27, borderColor: 'gray', borderWidth: 1,fontSize:20}}/>
-        <Button theme="primary" style={{marginTop:-1}}>Create</Button>
+               style={{height: 27, borderColor: 'gray', borderWidth: .5,fontSize:25,marginRight:5}}/>
+        <Button theme="primary" style={{borderRadius:30,fontSize:20}}>Create</Button>
         {this.renderError()}
       </form>
     );

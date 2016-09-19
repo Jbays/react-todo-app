@@ -1,16 +1,6 @@
 import React from 'react';
 const Button = require('react-button');
-
-let themes = {
-  delete: {
-    style:{color:'red'},
-    disabledStyle: { background: 'red'},
-    overStyle: { color: 'white',background: 'red'},
-    activeStyle: { background: 'red'},
-    pressedStyle: {background: 'red', fontWeight: 'bold'},
-    overPressedStyle: {background: 'red', fontWeight: 'bold'}
-  }
-};
+const buttonThemes = require('./../styles/buttonStyles');
 
 export default class ToDosListItem extends React.Component {
   constructor(props){
@@ -36,6 +26,27 @@ export default class ToDosListItem extends React.Component {
     const newTask = this.refs.editInput.value;
     this.props.saveTask(oldTask,newTask);
     this.setState({isEditing:false});
+  }
+
+  renderCompletedStatusSection(){
+    const { isCompleted } = this.props;
+    const completedStatusStyle={
+      textAlign:'center',
+      fontSize:20
+    };
+
+    if ( isCompleted ){
+      completedStatusStyle.color = 'green';
+      return (
+        <td style={completedStatusStyle}>✓</td>
+      )
+    } else {
+      completedStatusStyle.color = 'red';
+      return (
+        <td style={completedStatusStyle}>✗</td>
+      )
+    }
+
   }
 
   renderTaskNameSection(){
@@ -69,15 +80,23 @@ export default class ToDosListItem extends React.Component {
     if (this.state.isEditing){
       return (
         <td>
-          <button onClick={this.onSaveClick.bind(this)}>Save</button>
-          <button onClick={this.onCancelClick.bind(this)}>Cancel</button>
+          <Button onClick={this.onSaveClick.bind(this)} theme={buttonThemes.save}>
+            Save
+          </Button>
+          <Button onClick={this.onCancelClick.bind(this)} theme={buttonThemes.cancel}>
+            Cancel
+          </Button>
         </td>
       )
     }
     return (
       <td>
-        <Button theme="default" onClick={this.onEditClick.bind(this)}>Edit</Button>
-        <Button theme={themes.delete} onClick={this.props.deleteTask.bind(this,this.props.task)}>Delete</Button>
+        <Button onClick={this.onEditClick.bind(this)} theme='' style={{borderRadius:30}}>
+          Edit
+        </Button>
+        <Button onClick={this.props.deleteTask.bind(this,this.props.task)} theme={buttonThemes.delete}>
+          Delete
+        </Button>
       </td>
     )
   }
@@ -85,6 +104,7 @@ export default class ToDosListItem extends React.Component {
   render(){
     return (
       <tr>
+        {this.renderCompletedStatusSection()}
         {this.renderTaskNameSection()}
         {this.renderButtonSection()}
       </tr>
