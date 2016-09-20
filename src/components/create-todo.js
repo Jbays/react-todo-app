@@ -56,7 +56,8 @@ export default class ToDosList extends React.Component {
                placeholder="  Input Task Title Here"
                ref="createInput"
                style={{height: 27, borderColor: 'gray', borderWidth: .5,fontSize:20,marginRight:5}}/>
-        <Button theme="primary" style={{borderRadius:30,fontSize:20}}>Create</Button>
+        <Button theme="primary" style={{borderRadius:30,fontSize:20}}
+                onClick={this.handleCreate.bind(this)}>Create</Button>
         {this.renderError()}
       </form>
     );
