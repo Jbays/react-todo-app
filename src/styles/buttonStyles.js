@@ -1,4 +1,4 @@
-let donuts = {
+let buttonStyles = {
   create:{
 
   },
@@ -43,4 +43,4 @@ let donuts = {
   }
 };
 
-module.exports = donuts;
+module.exports = buttonStyles;
