@@ -10,10 +10,20 @@ export default class ToDosList extends React.Component {
     };
   }
 
+  /**
+   * @name: handleCreate
+   * @description: Grab info from input-text field
+   **              Validate task
+   **              If invalid, show error-messages
+   **              If valid (1) remove any error-message
+   **                       (2) create task
+   **                       (3) empty input-text field
+   * @param:  event (Proxy object)
+   */
+
   handleCreate(event){
     event.preventDefault();
 
-    //assigns createInput to input text box
     const createInput = this.refs.createInput;
     const task = createInput.value;
     const validateInput = this.validateInput(task);
@@ -28,6 +38,14 @@ export default class ToDosList extends React.Component {
     this.refs.createInput.value='';
   }
 
+  /**
+   * @name: validateInput
+   * @description: returns error if task is falsy
+   **              returns error if task is not unique
+   **              else returns nothing
+   * @param: task (string)
+   */
+
   validateInput(task){
     if (!task){
       return 'Please enter a task'
@@ -38,8 +56,14 @@ export default class ToDosList extends React.Component {
     }
   }
 
+  /**
+   * @name: renderError
+   * @description: if this.state.error is falsy return NO error
+   **              else return error-message in red
+   * @param: none
+   */
+
   renderError(){
-    //if no error, return nothing
     if (!this.state.error){return null;}
     return (
       <div style={{color:'red'}}>
@@ -47,6 +71,17 @@ export default class ToDosList extends React.Component {
       </div>
     )
   }
+
+  /**
+   * @name: render
+   * @description: returns(
+   **                the form which contains:
+   **                1. input-text field for taskNames (string)
+   **                2. create button
+   **                3. renders error-messages (if applicable)
+   **              (
+   * @param: none
+   */
 
   render(){
     return (

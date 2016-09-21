@@ -4,27 +4,27 @@ import TodoList from './todo-list';
 
 const todos = [
   {
-    task:'This is your first task.  Green means completed.',
+    task:'Your first task is completed.',
     isCompleted: true
   },
   {
-    task:'Your second task.  Red means uncompleted.',
+    task:'Your second task is uncompleted.',
     isCompleted: false
   },
   {
-    task:'Click task to toggle between completed/uncompleted',
+    task:'<----- Click to toggle completed/uncompleted. ',
     isCompleted: true
   },
   {
-    task: 'Click "edit" to change task title. Click "save" to keep changes.',
+    task: '"Edit" to change task title.',
     isCompleted:false,
   },
   {
-    task: 'Click "edit" to change task title. Click "cancel" to discard changes.',
+    task: '"Save" to keep changes. "Cancel" to discard.',
     isCompleted:false,
   },
   {
-    task: 'Click "delete" to remove task',
+    task: '"Delete" to remove task',
     isCompleted:false,
   }
 
