@@ -1,11 +1,11 @@
-import _ from 'lodash';
+import _     from 'lodash';
 import React from 'react';
 import ToDosListHeader from './todo-list-header';
-import ToDosListItem from './todos-list-item';
+import ToDosListItem   from './todos-list-item';
 
 export default class ToDoList extends React.Component {
 
-  renderItems() {
+  renderListItem() {
     const props = _.omit(this.props,'todos');
 
     return (
@@ -15,12 +15,11 @@ export default class ToDoList extends React.Component {
   }
 
   render() {
-
     return (
       <table>
         <ToDosListHeader />
           <tbody>
-            {this.renderItems()}
+            {this.renderListItem()}
           </tbody>
       </table>
     )
